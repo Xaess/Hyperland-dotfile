@@ -1,0 +1,7 @@
+{
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip-format": "Menu d'alimentation",
+        "on-click": "wlogout -b 5 -T 500 -B 500"
+    }
+}

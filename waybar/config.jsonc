@@ -1,0 +1,52 @@
+{
+    "layer": "top",
+    "height": 20,
+    "modules-right": [
+        "group/controls"
+    ],
+    "modules-left": [
+        "hyprland/workspaces",
+        "group/apps"
+    ],
+    "modules-center": [
+        "group/hardware"
+    ],
+    "include": [
+        // modules 
+        "~/.config/waybar/modules/clock.jsonc",
+        "~/.config/waybar/modules/tray.jsonc",
+        "~/.config/waybar/modules/pulseaudio.jsonc",
+        "~/.config/waybar/modules/cpu.jsonc",
+        "~/.config/waybar/modules/memory.jsonc",
+        "~/.config/waybar/modules/disk.jsonc",
+        "~/.config/waybar/modules/temperature.jsonc",
+        "~/.config/waybar/modules/battery.jsonc",
+        "~/.config/waybar/modules/power.jsonc"
+    ],
+    "group/apps": {
+        "orientation": "horizontal",
+        "modules": [
+            "tray"
+        ]
+    },
+    "group/controls": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio/slider#out",
+            "pulseaudio#vol",
+            "pulseaudio#mic",
+            "clock",
+            "battery",
+            "custom/power"
+        ]
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "disk",
+            "temperature"
+        ]
+    }
+}

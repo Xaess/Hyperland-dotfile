@@ -1,0 +1,231 @@
+/* ~/.config/waybar/style.css */
+@import "../theme/colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  transition: all 150ms ease;
+}
+
+window#waybar {
+  background: transparent;
+  color: @text;
+}
+
+tooltip {
+  background: @glass_bg_strong;
+  border: 1px solid @accent_border;
+  border-radius: 10px;
+}
+
+tooltip label {
+  color: @text;
+  padding: 2px 4px;
+}
+
+/* ---------- Pilules (verre) ---------- */
+#workspaces,
+#apps,
+#hardware,
+#controls {
+  background: @glass_bg;
+  border: 1px solid @glass_border;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 @glass_highlight;
+  margin: 2px 2px;
+  padding: 0 8px;
+}
+
+/* ---------- Workspaces ---------- */
+#workspaces {
+  padding: 0 3px;
+}
+
+#workspaces button {
+  padding: 0 7px;
+  margin: 2px 1px;
+  color: @subtext;
+  background: transparent;
+  background-image: none;
+  border-radius: 8px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#workspaces button:hover {
+  background: @accent_soft;
+  color: @accent;
+}
+
+#workspaces button.active {
+  background: @accent;
+  color: @base;
+}
+
+#workspaces button.urgent {
+  background: @red;
+  color: @base;
+}
+
+/* ---------- Groupe hardware (centre) ---------- */
+#cpu,
+#memory,
+#disk,
+#temperature {
+  padding: 0 8px;
+  color: @text;
+}
+
+#temperature.critical {
+  color: @red;
+}
+
+/* ---------- Groupe apps (gauche) ---------- */
+#tray {
+  padding: 0 6px;
+  color: @text;
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background: @red;
+  border-radius: 8px;
+}
+
+/* ---------- Groupe controls (droite) ---------- */
+#controls {
+  padding: 0 8px;
+}
+
+/* Espacement entre chaque élément du groupe */
+#pulseaudio-slider,
+#pulseaudio,
+#clock,
+#battery,
+#custom-power {
+  margin: 0 1px;
+}
+
+#pulseaudio,
+#clock,
+#battery,
+#custom-power {
+  padding: 0 2px;
+  color: @text;
+}
+
+/* Largeur fixe des icônes audio : l'îlot ne bouge plus quand l'icône change */
+#pulseaudio.vol,
+#pulseaudio.mic {
+  min-width: 22px;
+}
+
+/* Chaque module n'a que sa propre couleur "muted".
+   Les deux modules partagent le même état PulseAudio, donc waybar ajoute
+   .muted et .source-muted aux deux : on cible par .vol / .mic */
+#pulseaudio.vol.muted {
+  color: @muted;
+}
+
+#pulseaudio.mic.source-muted {
+  color: @muted;
+}
+
+#pulseaudio:hover {
+  color: @accent;
+}
+
+#pulseaudio-slider {
+  min-width: 120px;
+  padding: 0 6px;
+}
+
+#pulseaudio-slider trough {
+  min-height: 4px;
+  min-width: 120px;
+  border-radius: 4px;
+  background: @glass_hover;
+}
+
+#pulseaudio-slider highlight {
+  min-height: 4px;
+  border-radius: 4px;
+  background: @accent;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#custom-power:hover {
+  color: @accent;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @orange;
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+  animation: blink 1s steps(2) infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    background: @red;
+    color: @base;
+  }
+}
+
+/* ---------- Menus clic droit du tray ---------- */
+/* Fenêtre popup GTK (CSD) : supprime cadre, ombre et marges transparentes
+   qui apparaissent comme un bord épais + coins carrés autour du menu */
+window.popup,
+window.popup decoration,
+.csd.popup,
+.csd.popup decoration {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+menu {
+  background: @glass_bg;
+  border: 1px solid @glass_border;
+  border-radius: 10px;
+  box-shadow: none;
+  margin: 0;
+  padding: 4px;
+  color: @text;
+}
+
+menu menuitem {
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+menu menuitem:hover {
+  background: @accent_soft;
+  color: @accent;
+}

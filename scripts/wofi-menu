@@ -1,0 +1,3 @@
+#!/bin/bash
+cd "${XDG_CONFIG_HOME:-$HOME/.config}/wofi" || exit 1
+exec wofi "$@"

@@ -1,0 +1,34 @@
+/* ~/.config/theme/colors.css — palette + police partagées (waybar, swaync, wofi) */
+
+/* Base (sombre, légèrement chaud) */
+@define-color base        #14130f;
+@define-color surface     #1d1b15;
+@define-color overlay     #2a2720;
+
+/* Texte */
+@define-color text        #f2ecdc;
+@define-color subtext     #a8a08a;
+@define-color muted       #6e6856;
+
+/* Accent : jaune */
+@define-color accent        #f5c518;
+@define-color accent_dim    #c9a21a;
+@define-color accent_soft   rgba(245, 197, 24, 0.16);
+@define-color accent_border rgba(245, 197, 24, 0.45);
+
+/* Sémantique */
+@define-color red         #ff6b5e;
+@define-color orange      #ff9f43;
+@define-color green       #9ccf6a;
+
+/* Verre (transparences) */
+@define-color glass_bg        rgba(20, 19, 15, 0.55);
+@define-color glass_bg_strong rgba(20, 19, 15, 0.78);
+@define-color glass_hover     rgba(255, 255, 255, 0.08);
+@define-color glass_border    rgba(255, 255, 255, 0.10);
+@define-color glass_highlight rgba(255, 255, 255, 0.06);
+
+/* Police partagée */
+* {
+  font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+}

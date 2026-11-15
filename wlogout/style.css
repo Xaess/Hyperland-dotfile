@@ -1,0 +1,63 @@
+/* ~/.config/wlogout/style.css */
+@import "../theme/colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 150ms ease;
+}
+
+window {
+  background-color: rgba(20, 19, 15, 0.55);
+}
+
+button {
+  color: @text;
+  background-color: @glass_bg_strong;
+  border: 1px solid @glass_border;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+}
+
+button:hover,
+button:focus {
+  color: @accent;
+  background-color: @accent_soft;
+  border-color: @accent;
+}
+
+button:active {
+  color: @base;
+  background-color: @accent;
+}
+
+/* Icônes fournies par le paquet wlogout */
+#lock {
+  background-image: url("./assets/lock.svg");
+  border-radius: 16px 0 0 16px;
+}
+
+#logout {
+  background-image: url("./assets/logout.svg");
+  border-radius: 0 0 0 0;
+}
+
+#suspend {
+  background-image: url("./assets/suspend.svg");
+  border-radius: 0 0 0 0;
+}
+
+#reboot {
+  background-image: url("./assets/reboot.svg");
+  border-radius: 0 0 0 0;
+}
+
+#shutdown {
+  background-image: url("./assets/shutdown.svg");
+  border-radius: 0 16px 16px 0;
+}
