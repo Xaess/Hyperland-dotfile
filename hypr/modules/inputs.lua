@@ -34,7 +34,11 @@ hl.device({
 })
 
 for _, name in ipairs({
-    "x820uitra1-keyboard"
+    "x820uitra",
+    "x820uitra-keyboard",
+    "x820uitra1-keyboard",
+    "x820uitra2-keyboard",
+    "x820uitra3-keyboard",
 }) do
     hl.device({ name = name, kb_layout = "us", kb_variant = "intl" })
 end
